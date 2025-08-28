@@ -14,7 +14,7 @@ class App extends Component {
     };
 
     buttonClickHandler() {
-   
+        this.setState({ renderBall: true })
    }
     renderBallOrButton() {
 		if (this.state.renderBall) {
@@ -26,7 +26,27 @@ class App extends Component {
 
     // bind ArrowRight keydown event
     componentDidMount() {
-      
+        document.addEventListener('keydown', (event) => {
+            if(event.key === "ArrowRight") {
+                this.setState((prevState) => ({
+                    ballPosition: {
+                        left: `${prevState.posi + 10}px`
+                    },
+                    posi: prevState.posi + 10
+                }))
+            }
+        })
+
+        document.addEventListener('keydown', (event) => {
+            if(event.key === "ArrowLeft") {
+                this.setState((prevState) => ({
+                    ballPosition: {
+                        left: `${prevState.posi - 10}px`
+                    },
+                    posi: prevState.posi - 10
+                }))
+            }
+        })
     }
 
     render() {
