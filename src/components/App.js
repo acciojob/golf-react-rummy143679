@@ -20,7 +20,7 @@ class App extends Component {
 		if (this.state.renderBall) {
 		    return <div className="ball" style={this.state.ballPosition}></div>
 		} else {
-		    return <button onClick={this.buttonClickHandler} >Start</button>
+		    return <button className="start-button" onClick={this.buttonClickHandler} >Start</button>
 		}
     }
 
@@ -30,9 +30,9 @@ class App extends Component {
             if(event.key === "ArrowRight") {
                 this.setState((prevState) => ({
                     ballPosition: {
-                        left: `${prevState.posi + 10}px`
+                        left: `${prevState.posi + 5}px`
                     },
-                    posi: prevState.posi + 10
+                    posi: prevState.posi + 5
                 }))
             }
         })
