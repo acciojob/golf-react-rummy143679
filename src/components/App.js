@@ -36,17 +36,6 @@ class App extends Component {
                 }))
             }
         })
-
-        document.addEventListener('keydown', (event) => {
-            if(event.key === "ArrowLeft") {
-                this.setState((prevState) => ({
-                    ballPosition: {
-                        left: `${prevState.posi - 10}px`
-                    },
-                    posi: prevState.posi - 10
-                }))
-            }
-        })
     }
 
     render() {
